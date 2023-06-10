@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" minHeight="-Infinity" prefWidth="500" prefHeight="500" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.Snake.HelloController">
+<!--    <padding>-->
+<!--        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>-->
+<!--    </padding>-->
+            <Rectangle fx:id="background" width="500" height="500" fill="beige" scaleZ="0.0" ></Rectangle>
+            <Button fx:id="end" text="restart" onAction="#endGame" prefHeight="50.0" prefWidth="150.0" alignment="CENTER" ></Button>
+            <Label fx:id="over" text="Game Over" minHeight="10" minWidth="10"  >
+                <font>
+                    <Font size="35" ></Font>
+                </font>
+            </Label>
+            <Label fx:id="score" minHeight="10" minWidth="10" text="Your score is"/>
+
+</BorderPane>
