@@ -15,9 +15,9 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class StartEndScreen {
-    // instance variable, ie. properties or attributes
 
-    // constructor populates those attributes
+
+    // constructor
     public StartEndScreen() {
 
     }
