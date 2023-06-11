@@ -25,7 +25,7 @@ public class StartGame {
 
     private  int framecount = 0;
     private Boolean running;
-    private Timer timer;
+
 
     // populate those attributes
     public StartGame(){
@@ -45,16 +45,26 @@ public class StartGame {
         Scene sc = new Scene(root);
         sc.addEventHandler(KeyEvent.KEY_RELEASED, (key) -> {
                     if (key.getCode() == KeyCode.RIGHT) {
-                        snake.direction = 0;
+                        if (snake.direction != 2) {
+                            snake.direction = 0;
+                        }
                     } else if (key.getCode() == KeyCode.DOWN) {
-                        snake.direction = 1;
+                        if (snake.direction != 3) {
+                            snake.direction = 1;
+                        }
+
                     } else if (key.getCode() == KeyCode.LEFT) {
-                        snake.direction = 2;
+
+                        if (snake.direction != 0) {
+                            snake.direction = 2;
+                        }
                     } else if (key.getCode() == KeyCode.UP) {
-                        snake.direction = 3;
+                        if (snake.direction != 1) {
+                            snake.direction = 3;
+                        }
                     }
                 });
-        //where is it
+//
         Canvas canvas = new Canvas(SnakeGameApplication.canvax, SnakeGameApplication.canvay);
         root.getChildren().add(canvas);
         GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -69,7 +79,7 @@ public class StartGame {
             public void handle(long currentNanoTime) {
                 // Clear the canvas
 
-//                Key(snake,);
+
                 present = currentNanoTime - lastupdate;
                 lastupdate = currentNanoTime;
 
@@ -109,14 +119,5 @@ public class StartGame {
         }.start();
     }
 
-    public void stop(){
-        stop();
-    }
-//    public void checkstop(){
-//        if (snake.isTouchingWall() == true) {
-//            stop();
-//        }
-//        if (snake.collusion() == true) {
-//            stop();
-//    }
+
 }
