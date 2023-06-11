@@ -2,6 +2,7 @@ package com.Snake;
 import com.Snake.model.Apple;
 import com.Snake.model.Point;
 import com.Snake.model.Snake;
+import com.Snake.scene.StartGame;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -17,11 +18,11 @@ public class Painter {
         gc.fillRect(0, 0, SnakeGameApplication.canvax, SnakeGameApplication.canvay);
     }
 
-    public static void paintScore(GraphicsContext gc){
+    public static void paintScore(GraphicsContext gc, int count){
         gc.setFill(Color.BLACK);
         gc.setTextBaseline(VPos.TOP);
 
-        gc.fillText("Number: " + SnakeGameApplication.count, 20, 20);
+        gc.fillText("Number: " + count, 20, 20);
     }
     public static void paintSnake(GraphicsContext gc, Snake snake){
         List<Point> p= snake.getBody();

@@ -21,7 +21,7 @@ public class SnakeGameApplication extends Application {
     public Timer timer;
     public Label countlabel = new Label("Timer!!!");
 
-    public static int count = 1;
+
 
 
     public static int framecount = 0;

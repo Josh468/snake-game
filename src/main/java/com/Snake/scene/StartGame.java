@@ -21,23 +21,19 @@ public class StartGame {
     // attribute
     private Apple apple;
     private Snake snake;
-    private int count = 1;
+    private int count = 0;
 
     private  int framecount = 0;
-    private Boolean running;
+
 
 
     // populate those attributes
     public StartGame(){
         snake = new Snake(7, 9);
         apple = new Apple(12, 9);
-        running=true;
 
 
-    }
 
-    public int getCount() {
-        return count;
     }
 
     public void start(Stage stage) {
@@ -64,7 +60,7 @@ public class StartGame {
                         }
                     }
                 });
-//
+
         Canvas canvas = new Canvas(SnakeGameApplication.canvax, SnakeGameApplication.canvay);
         root.getChildren().add(canvas);
         GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -75,14 +71,11 @@ public class StartGame {
             public long lastupdate = 0;
             public long present = 0;
 
-
             public void handle(long currentNanoTime) {
                 // Clear the canvas
 
-
                 present = currentNanoTime - lastupdate;
                 lastupdate = currentNanoTime;
-
                 framecount++;
 
 
@@ -96,6 +89,7 @@ public class StartGame {
                 if (snake.isTouchingApple(apple) == true) {
                     apple.changeSpot();
                     count++;
+
                 }
                 if (snake.isTouchingWall() == true) {
                     stop();
@@ -110,11 +104,11 @@ public class StartGame {
                 Painter.paintBackground(gc);
                 Painter.paintSnake(gc,snake);
                 Painter.paintApple(gc,apple);
-                Painter.paintScore(gc);
+                Painter.paintScore(gc,count);
 
                 //movement
                 snake.pixelMove();
-                System.out.println(snake.pixelx + " " + snake.pixely);
+//                System.out.println(snake.pixelx + " " + snake.pixely);
             }
         }.start();
     }

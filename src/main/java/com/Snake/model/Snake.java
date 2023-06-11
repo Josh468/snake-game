@@ -65,9 +65,6 @@ public class Snake {
         }
     }
     public void move() {
-//        System.out.println("move ___________________________________________");
-//            t.x = body.get(0).x + 1;
-//            t.y = body.get(0).y;
 
         if (direction == 0) {
             Point t = new Point(body.get(0).getX() + 1,body.get(0).getY());
@@ -122,7 +119,7 @@ public class Snake {
     public boolean isTouchingApple(Apple apple) {
         if (body.get(0).getX() == apple.getPoint().getX() && body.get(0).getY() == apple.getPoint().getY()){
             grow();
-            addSpeed();
+//            addSpeed();
         return true;
         }else {
             return false;
@@ -146,19 +143,12 @@ public class Snake {
         return false;
     }
 
-    public void render(GraphicsContext gc){
-//        System.out.println("render ___________________________________________");
-        gc.setFill(Color.GREEN);
-        gc.fillRect(body.get(0).getX()*10,body.get(0).getY()*10, 10, 10);
-        gc.setFill(Color.DARKBLUE);
-        for (int i = 1; i < size; i++) {
-            gc.fillRect(body.get(i).getX()*10,body.get(i).getY()*10, 10, 10);
-        }
 
-    }
-    public void addSpeed(){
-        if (size%5==0){
-            speed++;
-        }
-    }
+
+//    public void addSpeed(){
+//        if (size%3==0){
+//            speed++;
+//            System.out.println("Hi");
+//        }
+//    }
 }

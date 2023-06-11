@@ -24,8 +24,8 @@ public class Apple {
 
     public void changeSpot(){
         System.out.println("change________________");
-        p.x=(int) (Math.random() * 20 );
-        p.y=(int) (Math.random() * 20 );
+        p.x=(int) (Math.random() * 50 );
+        p.y=(int) (Math.random() * 50 );
 
 
     }
